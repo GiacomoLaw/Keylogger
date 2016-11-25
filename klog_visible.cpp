@@ -1,3 +1,5 @@
+//not quite finished yet! klog_invisible.cpp is though
+
 #include "stdafx.h"
 #include <iostream>
 #include <windows.h>
