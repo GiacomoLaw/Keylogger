@@ -9,7 +9,7 @@ There are two files; klog_visible and klog_invisible. It is pretty simple, but I
 Both of these save the keystrokes to a .txt file when closed.
 
 ## Mac
-This is a little more complicated, as its Apple after all!
+This is a little more complicated, as its Apple after all! Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
 
 ### Installation
 Download the repo. It will install in `/usr/local/bin/keylogger`.
