@@ -36,4 +36,6 @@ Will uninstall the program, but not the logs.
 
 ---
 
+Please feel free to contribute to fix any problems!
+
 Please note, this repo is for educational purposes only. No contributers are to fault for any actions done by this program.
