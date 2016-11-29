@@ -22,6 +22,7 @@ $ make && make install`
 It will log to `/var/log/keystroke.log`. This may require root access, but you can change that if you want. Set where you want it to log:
 
 `$ keylogger ~/logfile.txt
+
 Logging to: /var/log/keystroke.log`
 
 Want to make it start on system startup?
