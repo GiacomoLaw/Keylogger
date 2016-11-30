@@ -10,3 +10,7 @@ Check that you have git installed, and then run this.
 This will clone this entire repo. Find the linux folder, and open it. Then run this:
 
 `giacomo@vostro:~$ cd keylogger/`
+
+---
+
+Readme not finished!
