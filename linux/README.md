@@ -13,10 +13,13 @@ This will clone this entire repo. Find the linux folder, extract it, and open it
 
 Set where you want the log to go **before** running this step.
 
-`giacomo@vostro:~/linux-logger$ python keylogger.py
-<class 'Xlib.protocol.request.QueryExtension'>
-<class 'Xlib.protocol.request.QueryExtension'>
-RECORD extension version 1.13`
+`giacomo@vostro:~/linux-logger$ python keylogger.py`
+
+`<class 'Xlib.protocol.request.QueryExtension'>`
+
+`<class 'Xlib.protocol.request.QueryExtension'>`
+
+`RECORD extension version 1.13`
 
 The keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key. Thats the one under escape on a standard keyboard.
 
