@@ -1,1 +1,3 @@
-
+language: python
+language: c
+language: cpp
