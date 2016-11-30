@@ -7,7 +7,7 @@ Check that you have git installed, and then run this.
 
 `git clone https://github.com/GiacomoLaw/Keylogger`
 
-This will clone this entire repo. Find the linux folder, extract it, and open it. Then run this:
+This will clone this entire repo. Find the linux folder, extract it, and open it. Rename the extracted folder to `linux-logger` Then run this:
 
 `giacomo@vostro:~$ cd linux-logger/`
 
