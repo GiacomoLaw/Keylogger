@@ -20,3 +20,11 @@ Set where you want the log to go **before** running this step.
 `<class 'Xlib.protocol.request.QueryExtension'>`
 
 `RECORD extension version 1.13`
+
+The keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key. Thats the one under escape on a standard keyboard.
+
+---
+
+You can make it run on startup:
+
+`python /home/giacomo/py-keylogger/keylogger.py`
