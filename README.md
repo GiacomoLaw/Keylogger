@@ -1,5 +1,5 @@
 # A simple keylogger for Windows, Linux and Mac
-Check out below to learn how to install them.
+Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork to improve if your want. Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
 
 ## Windows
 Simply compile into an .exe, and then run. 
