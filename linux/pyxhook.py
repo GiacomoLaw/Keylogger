@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-#
+# modified version of pyxhook.py
 
 # pyxhook -- an extension to emulate some of the PyHook library on linux.
 
