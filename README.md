@@ -16,7 +16,7 @@ Both of these save the keystrokes to a .txt file when closed.
 This is a little more complicated, as its Apple after all! Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
 
 ### Installation
-Download the repo. It will install in `/usr/local/bin/keylogger`. 
+Download the repo. It will install in `/usr/local/bin/keylogger`.
 
 Install it:
 
