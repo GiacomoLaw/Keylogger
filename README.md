@@ -32,12 +32,13 @@ It will log to `/var/log/keystroke.log`. This may require root access, but you c
 
 Want to make it start on system startup?
 
-`$ sudo make uninstall`
+`$ sudo make startup`
 
 That will run it on startup.
 
 ### Uninstall
 `$ sudo make uninstall`
+
 Will uninstall the program, but not the logs.
 
 ## Linux
