@@ -1,6 +1,6 @@
 import pyxhook
 
-# This tells the keylogger where the log file will go. Change as needed
+# This tells the keylogger where the log file will go (where characters are logged). Change as is needed.
 log_file = '/home/Giacomo/Desktop/file.log'
 
 
