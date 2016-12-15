@@ -1,14 +1,15 @@
 # A simple keylogger for Windows, Linux and Mac
 Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork to improve if your want. Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
 
-Please note, currently there is no known way to track keylogs in secure area on Mac, such as password inputs. Yes, it really defies the point of a keylogger, but...
+Please note, currently there is no known way to track keylogs in secure areas on Macs, such as password input areas.
 
 ## Windows
-Simply compile into an .exe, and then run. 
+Simply compile into an .exe, and then run. Visual Studio is good for this.
 
 There are two files; klog_visible and klog_invisible. It is pretty simple, but I will expand:
 
-`klog_visible` is visible, and the window does not close when typing. Great for testing it out. `klog_invisible` makes the window of the logger disappear, and it also starts up hidden from view. Note that it is still visible in the task manager.
+- `klog_invisible` makes the window of the logger disappear, and it also starts up hidden from view. Note that it is still visible in the task manager.
+- `klog_visible` is visible, and the window does not close when typing. Great for testing it out. 
 
 Both of these save the keystrokes to a .txt file when closed.
 
