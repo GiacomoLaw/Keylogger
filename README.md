@@ -1,4 +1,6 @@
 # A simple keylogger for Windows, Linux and Mac
+[Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
+
 Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork to improve if your want. Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
 
 Please note, currently there is no known way to track keylogs in secure areas on Macs, such as password input areas.
