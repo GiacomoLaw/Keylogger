@@ -1,3 +1,5 @@
+// note that this program will be visible. Use `klog_invisible.cpp` to get the hidden one.
+
 #include <iostream>
 #include <windows.h>
 #include <winuser.h>   
