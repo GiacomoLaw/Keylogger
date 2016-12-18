@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/GiacomoLaw/Keylogger.png?label=ready&title=Ready)](https://waffle.io/GiacomoLaw/Keylogger)
 # A simple keylogger for Windows, Linux and Mac
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
