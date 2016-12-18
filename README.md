@@ -3,6 +3,8 @@
 
 [Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
 
+Welcome to the simple keylogger repo! A keylogger is a program that records your keystrokes, and this program saves them in a log file on your local computer. 
+
 Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork and improve it if you want. Be sure to check out the [pull requests](https://github.com/GiacomoLaw/Keylogger/pulls) to see if your problem has been fixed, or to help out others.
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
