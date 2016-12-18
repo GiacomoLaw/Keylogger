@@ -1,0 +1,21 @@
+
+matrix:
+  include:
+    - os: linux
+      language: python
+      python: 2.7
+      before_install:
+      - sudo apt-get install python-xlib
+      - cd linux
+      script:
+      - python keylogger.py
+
+    - os: osx
+      language: c
+      compiler: gcc
+      before_install:
+      - cd mac
+      install:
+      - gcc keylogger.c -o keylogger
+      script:
+      - keylogger
