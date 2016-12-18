@@ -1,5 +1,5 @@
 # A simple keylogger for Windows, Linux and Mac
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)[![Dependency Status](https://dependencyci.com/github/GiacomoLaw/Keylogger/badge)](https://dependencyci.com/github/GiacomoLaw/Keylogger)[![Stories in Ready](https://badge.waffle.io/GiacomoLaw/Keylogger.png?label=ready&title=Ready)](https://waffle.io/GiacomoLaw/Keylogger)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)[![Dependency Status](https://dependencyci.com/github/GiacomoLaw/Keylogger/badge)](https://dependencyci.com/github/GiacomoLaw/Keylogger)
 
 [Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
 
