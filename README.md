@@ -81,6 +81,17 @@ You can make it run on startup:
 `python /home/giacomo/py-keylogger/keylogger.py`
 
 ---
+#### Uses
+
+Some uses of a keylogger are:
+
+- Business Administration: Monitor what employees are doing.
+- School/Institutions: Track keystrokes and log banned words in a file.
+- Personal Control and File Backup: Make sure no one is using your computer when you are away.
+- Parental Control: Track what your children are doing.
+- Self analysis 
+
+---
 
 Feel free to contribute to fix any problems, or to submit an issue!
 
