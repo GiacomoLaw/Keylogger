@@ -50,6 +50,10 @@ That will run it on startup.
 
 Will uninstall the program, but not the logs.
 
+---
+
+Thanks to Casey Scarborough for the base program!
+
 ## Linux
 ### Installation
 You'll need to install python-xlib if you don't have it.
