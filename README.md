@@ -9,8 +9,6 @@ Check out below to learn how to install them. These keyloggers are simple and ba
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
 
-> Please note, currently there is no known way to track keylogs in secure areas on Macs, such as password input areas.
-
 ## Windows
 Simply compile into an .exe, and then run. Visual Studio is good for this.
 
@@ -82,7 +80,9 @@ The keylogger is now running! It will log your strokes to the file you specified
 
 You can make it run on startup:
 
-`python /home/giacomo/py-keylogger/keylogger.py`
+`$ sudo make startup`
+
+> Please note that the keylogger is unable to capture secure areas.
 
 ---
 #### Uses
