@@ -52,6 +52,8 @@ Will uninstall the program, but not the logs.
 
 Thanks to Casey Scarborough for the base program!
 
+> Please note that this logger cannot record keystrokes in protected areas yet.
+
 ## Linux
 ### Installation
 You'll need to install python-xlib if you don't have it.
@@ -110,8 +112,6 @@ specified. Stop it by hitting the cancel key (grave or \`, if not set with
 You can make it run on startup:
 
 `$ sudo make startup`
-
-> Please note that the keylogger is unable to capture secure areas.
 
 ---
 #### Uses
