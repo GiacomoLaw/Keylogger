@@ -3,11 +3,11 @@
 
 [Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
 
-Welcome to the simple keylogger repo! A keylogger is a program that records your keystrokes, and this program saves them in a log file on your local computer. 
+Welcome to the simple keylogger repo! A keylogger is a program that records your keystrokes, and this program saves them in a log file on your local computer.
 
 Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork and improve it if you want. Be sure to check out the [pull requests](https://github.com/GiacomoLaw/Keylogger/pulls) to see if your problem has been fixed, or to help out others.
 
-Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux. 
+Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
 
 ## Windows
 Simply compile into an .exe, and then run. Visual Studio is good for this.
@@ -15,7 +15,7 @@ Simply compile into an .exe, and then run. Visual Studio is good for this.
 There are two files; klog_visible and klog_invisible. It is pretty simple, but I will expand:
 
 - `klog_invisible` makes the window of the logger disappear, and it also starts up hidden from view. Note that it is still visible in the task manager.
-- `klog_visible` is visible, and the window does not close when typing. Great for testing it out. 
+- `klog_visible` is visible, and the window does not close when typing. Great for testing it out.
 
 Both of these save the keystrokes to a .txt file when closed.
 
@@ -56,6 +56,12 @@ Thanks to Casey Scarborough for the base program!
 ### Installation
 You'll need to install python-xlib if you don't have it.
 
+You can install it using `pip`:
+
+`pip install python-xlib`
+
+...or your system package manager:
+
 `sudo apt-get install python-xlib`
 
 Check that you have git installed, and then run this.
@@ -66,17 +72,40 @@ This will clone this entire repo. Find the linux folder, extract it, and open it
 
 `giacomo@vostro:~$ cd linux-logger/`
 
-Set where you want the log to go **before** running this step.
+### Options
+There are several options that can be set with environment variables:
 
-`giacomo@vostro:~/linux-logger$ python keylogger.py`
+- `pylogger_file`: File path to use as the log file.
+Default: `~/Desktop/file.log`
+- `pylogger_cancel`: The key to use as the cancel key, in character form.
+Default: \`
+- `pylogger_clean`: Whether to clear the file on startup. This can be set to anything to clear the file.
+Default: No (not set)
 
-`<class 'Xlib.protocol.request.QueryExtension'>`
+### Running
 
-`<class 'Xlib.protocol.request.QueryExtension'>`
+You can use Python 2 or 3 to run the logger.
 
-`RECORD extension version 1.13`
+To run it:
+```
+$ python keylogger.py
+<class 'Xlib.protocol.request.QueryExtension'>
+<class 'Xlib.protocol.request.QueryExtension'>
+RECORD extension version 1.13
+```
 
-The keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key. Thats the one under escape on a standard keyboard.
+Or, using the options mentioned above:
+```bash
+# This tells the logger to use /home/me/myfile.txt,
+# clearing the file on startup, and using ! as the
+# cancel key.
+# You don't have to use all of these options at once, or any at all.
+$ pylogger_file="/home/me/myfile.txt" pylogger_clean=1 pylogger_cancel="!" python keylogger.py
+```
+
+The keylogger is now running! It will log your strokes to the file you
+specified. Stop it by hitting the cancel key (grave or \`, if not set with
+`pylogger_cancel`. Thats the one under escape on a standard keyboard.)
 
 You can make it run on startup:
 
@@ -93,7 +122,7 @@ Some uses of a keylogger are:
 - School/Institutions: Track keystrokes and log banned words in a file.
 - Personal Control and File Backup: Make sure no one is using your computer when you are away.
 - Parental Control: Track what your children are doing.
-- Self analysis 
+- Self analysis
 
 ---
 
