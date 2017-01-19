@@ -107,7 +107,7 @@ $ pylogger_file="/home/me/myfile.txt" pylogger_clean=1 pylogger_cancel="!" pytho
 
 The keylogger is now running! It will log your strokes to the file you
 specified. Stop it by hitting the cancel key (grave or \`, if not set with
-`pylogger_cancel`. Thats the one under escape on a standard keyboard.)
+`pylogger_cancel`. That's the one under escape on a standard keyboard.)
 
 You can make it run on startup:
 
