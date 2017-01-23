@@ -1,7 +1,7 @@
 # A simple keylogger for Windows, Linux and Mac
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
-[Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
+[Website](https://simple-keylogger.github.io) - [Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
 
 Welcome to the simple keylogger repo! A keylogger is a program that records your keystrokes, and this program saves them in a log file on your local computer.
 
