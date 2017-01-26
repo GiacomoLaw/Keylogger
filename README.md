@@ -9,6 +9,12 @@ Check out below to learn how to install them. These keyloggers are simple and ba
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
 
+## Contents
+- [Windows installation guide](https://github.com/giacomolaw/keylogger#windows).
+- [Mac installation guide](https://github.com/giacomolaw/keylogger#mac)
+- [Linux installation guide](https://github.com/giacomolaw/keylogger#linux)
+- [View the keylogger site for more information](https://simple-keylogger.github.io/)
+
 ## Windows
 To change visibility of the window set the `#define` in line 6 to `visible` or `invisible`.
 
