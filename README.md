@@ -130,6 +130,8 @@ Feel free to contribute to fix any problems, or to submit an issue!
 
 Please note, this repo is for educational purposes only. No contributors, major or minor, are to fault for any actions done by this program.
 
-Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [My website](https://giacomolaw.github.io)
+Don't really understand licenses or tl;dr? Check out the [MIT license summary](https://tldrlegal.com/license/mit-license).
+
+Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](https://giacomolaw.github.io)
 
 Distributed under the MIT license. See [LICENSE](https://github.com/GiacomoLaw/Keylogger/blob/master/LICENSE.txt) for more information.
