@@ -1,6 +1,0 @@
-languages:
-  C++: true
-  C: true
-  Python: true
-exclude_paths:
-- "linux/pyxhook.py"
