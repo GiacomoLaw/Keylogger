@@ -9,6 +9,8 @@ Check out below to learn how to install them. These keyloggers are simple and ba
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
 
+> Looking to make a fix or change on the website? You can find it [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
+
 ## Contents
 - [Windows installation guide](https://github.com/giacomolaw/keylogger#windows)
 - [Mac installation guide](https://github.com/giacomolaw/keylogger#mac)
@@ -24,6 +26,8 @@ Simply compile into an .exe, and then run. Visual Studio is good for this.
 - `visible` is visible, and the window does not close when typing. Great for testing it out.
 
 Both of these save the keystrokes to a .txt file when closed.
+
+> Note that sometimes your compiler may through up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
 
 ## Mac
 This is a little more complicated, as its Apple after all! Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
