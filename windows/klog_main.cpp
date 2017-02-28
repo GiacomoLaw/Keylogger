@@ -88,7 +88,7 @@ int Save(int key_stroke, char *file)
     }
 
 
-	//std::cout << key_stroke << '\n';
+	std::cout << key_stroke << '\n';
 
 	if (key_stroke == VK_BACK)
 		fprintf(OUTPUT_FILE, "%s", "[BACKSPACE]");
