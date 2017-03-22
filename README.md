@@ -9,13 +9,13 @@ Check out below to learn how to install them. These keyloggers are simple and ba
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
 
-> Looking to make a fix or change on the website? You can find it [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
+> Looking to make a fix or change on the website? You can find the website repo [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
 
 ## Contents
 - [Windows installation guide](https://github.com/giacomolaw/keylogger#windows)
 - [Mac installation guide](https://github.com/giacomolaw/keylogger#mac)
 - [Linux installation guide](https://github.com/giacomolaw/keylogger#linux)
-- [View the keylogger site for more information](https://simple-keylogger.github.io/)
+- [Check out the site for more information](https://simple-keylogger.github.io/)
 
 ## Windows
 To change visibility of the window set the `#define` in line 6 to `visible` or `invisible`.
@@ -30,7 +30,7 @@ Both of these save the keystrokes to a .txt file when closed.
 > Note that sometimes your compiler may through up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
 
 ## Mac
-This is a little more complicated, as its Apple after all! Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
+This is a little more complicated. Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
 
 ### Installation
 Download the repo. It will install in `/usr/local/bin/keylogger`.
