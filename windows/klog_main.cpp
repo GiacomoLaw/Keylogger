@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <time.h>
 #include <iostream>
+#include <cstdio>
 
 // defines whether the window is visible or not
 // should be solved with makefile, not in this file
