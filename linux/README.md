@@ -1,7 +1,8 @@
 ##Installation
 You'll need to install python-xlib if you don't have it.
 
-`pip install python-xlib`    
+`pip install python-xlib`
+
 or `sudo pip install python-xlib` to install `python-xlib` globally.
 
 or use `ubuntu/debian` package manager:
