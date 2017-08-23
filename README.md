@@ -37,7 +37,7 @@ Download the repo. It will install in `/usr/local/bin/keylogger`.
 
 Install it:
 
-`$ git clone https://github.com/GiacomoLaw/Keylogger && cd keylogger`
+`$ git clone https://github.com/GiacomoLaw/Keylogger && cd keylogger/mac`
 
 `$ make && make install`
 
