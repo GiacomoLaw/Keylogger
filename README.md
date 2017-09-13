@@ -12,9 +12,9 @@ Currently, there are three keylogger programs for the major operating systems; W
 > Looking to make a fix or change on the website? You can find the website repo [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
 
 ## Contents
-- [Windows installation guide](https://github.com/giacomolaw/keylogger#windows)
-- [Mac installation guide](https://github.com/giacomolaw/keylogger#mac)
-- [Linux installation guide](https://github.com/giacomolaw/keylogger#linux)
+- [Windows installation guide](https://simple-keylogger.github.io/windows.html)
+- [Mac installation guide](https://simple-keylogger.github.io/mac.html)
+- [Linux installation guide](https://simple-keylogger.github.io/linux.html)
 - [Check out the site for more information](https://simple-keylogger.github.io/)
 
 ## Windows
