@@ -33,3 +33,5 @@ Please feel free to contribute to fix any problems!
 Please note, this repo is for educational purposes only. No contributors are to fault for any actions done by this program.
 
 > [If anyone knows where to get a key code list for `c` for `azerty` keyboards, please let me know!](https://github.com/GiacomoLaw/Keylogger/issues/29)
+
+Thanks to Casey Scarborough for the base program!
