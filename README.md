@@ -60,7 +60,7 @@ Will uninstall the program, but not the logs.
 
 ---
 
-Thanks to Casey Scarborough for the base program!
+Thanks to [Casey Scarborough](https://github.com/caseyscarborough/keylogger) for the base program!
 
 > Please note that this logger cannot record keystrokes in protected areas yet.
 
