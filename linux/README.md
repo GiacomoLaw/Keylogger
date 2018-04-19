@@ -1,25 +1,35 @@
-##Installation
+# Keylogger
+
+### Prerequisites
+
 You'll need to install python-xlib if you don't have it.
 
-`pip install python-xlib`
+#### To install `python-xlib`:
 
-or `sudo pip install python-xlib` to install `python-xlib` globally.
+`pip install python-xlib` or `sudo pip install python-xlib`.
 
-or use `ubuntu/debian` package manager:
+
+For `ubuntu/debian` package manager:
+
 `sudo apt-get install python-xlib`
 
-Check that you have git installed, and then run this.
+
+### How to install
+
+Clone the repository
 
 `git clone https://github.com/GiacomoLaw/Keylogger`
 
-This will clone this entire repo. Find the linux folder, extract it, and open it. Rename the extracted folder to `linux-logger` Then run this:
+This will clone this entire repo. Find the linux folder, extract it, and open it. Rename the extracted folder to `linux-logger`.
 
-`giacomo@vostro:~$ cd linux-logger/`
+## How to run it
 
 Set where you want the log to go **before** running this step.
 
+Run this command to start
+
 ```
-giacomo@vostro:~/linux-logger$ python keylogger.py
+python keylogger.py
 
 <class 'Xlib.protocol.request.QueryExtension'>
 
@@ -32,6 +42,6 @@ The keylogger is now running! It will log your strokes to the file you specified
 
 ---
 
-You can make it run on startup:
+You can make it run on **startup**:
 
 `python /home/giacomo/py-keylogger/keylogger.py`
