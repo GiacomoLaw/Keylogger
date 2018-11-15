@@ -1,4 +1,4 @@
-Please make sure that all your commits are squashed into one commit. Also test that the logger works.
+Please make sure that all your commits are squashed into one commit. Also test that the logger works - you may be requested to end an image of the log and results.
 
 ## Workflow
 - Fork the project.
