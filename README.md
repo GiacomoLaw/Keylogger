@@ -145,3 +145,7 @@ Don't really understand licenses or tl;dr? Check out the [MIT license summary](h
 Distributed under the MIT license. See [LICENSE](https://github.com/GiacomoLaw/Keylogger/blob/master/LICENSE.txt) for more information.
 
 Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](https://giacomolaw.github.io)
+
+Help support the project:
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?token=vzvIIIrF42s6vMK7K56P3pJzLZ3tUPtaXJ8pbYnRX6XGEao3OTJbwR3NLxrWmcne_UHvuW)
