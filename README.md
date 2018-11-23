@@ -148,4 +148,4 @@ Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](h
 
 Help support the project:
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?token=vzvIIIrF42s6vMK7K56P3pJzLZ3tUPtaXJ8pbYnRX6XGEao3OTJbwR3NLxrWmcne_UHvuW)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FWTUUC2C3G9BL&source=url)
