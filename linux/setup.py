@@ -23,13 +23,13 @@ with open('README.md', 'r', 'utf-8') as f:
 setup(
     name=about['__title__'],
     version=about['__version__'],
-    description=about['__description__'],
+    description=about['A simple keylogger'],
     long_description=readme,
-    author=about['__author__'],
-    author_email=about['__author_email__'],
-    url=about['__url__'],
+    author=about['Giacomo Lawrance'],
+    author_email=about['thenerdystudent@gmail.com'],
+    url=about['simple-keylogger.github.io'],
     install_requires=requires,
-    license=about['__license__'],
+    license=about['MIT'],
     packages=find_packages(),
     zip_safe=False,
     entry_points = {
