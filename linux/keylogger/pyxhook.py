@@ -1,54 +1,14 @@
 #!/usr/bin/env python
-# modified version of pyxhook.py
-# Reformatted/modified to work with Python 3+.
-# pyxhook -- an extension to emulate some of the PyHook library on linux.
-#
-#    Copyright (C) 2008 Tim Alexander <dragonfyre13@gmail.com>
-#
-#    View the repo: https://github.com/JeffHoogland/pyxhook
-#
-#    This program is free software; you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation; either version 2 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program; if not, write to the Free Software
-#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#
-#    Thanks to Alex Badea <vamposdecampos@gmail.com> for writing the Record
-#    demo for the xlib libraries. It helped me immensely working with these
-#    in this library.
-#
-#    Thanks to the python-xlib team. This wouldn't have been possible without
-#    your code.
-#
-#    This requires:
-#    at least python-xlib 1.4
-#    xwindows must have the 'record' extension present, and active.
-#
-#    This file has now been somewhat extensively modified by
-#    Daniel Folkinshteyn <nanotube@users.sf.net>
-#    So if there are any bugs, they are probably my fault. :)
 from __future__ import print_function
 
-import sys
 import re
-import time
+import sys
 import threading
+import time
 
-from Xlib import X, XK, display, error  # noqa
+from Xlib import XK, X, display, error  # noqa
 from Xlib.ext import record
 from Xlib.protocol import rq
-
-#######################################################################
-# ######################START CLASS DEF################################
-#######################################################################
 
 
 def print_err(*args, **kwargs):
@@ -71,7 +31,6 @@ class HookManager(threading.Thread):
         anything. It hands the function an argument that is the
         PyxHookKeyEvent class.
     """
-
     def __init__(self):
         threading.Thread.__init__(self)
         self.finished = threading.Event()
@@ -421,11 +380,6 @@ class PyxHookMouseEvent:
             'Position: {s.Position}',
             'MessageName: {s.MessageName}',
         )).format(s=self)
-
-
-#######################################################################
-# ########################END CLASS DEF################################
-#######################################################################
 
 if __name__ == '__main__':
     hm = HookManager()

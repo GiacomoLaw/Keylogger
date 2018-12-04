@@ -1,0 +1,7 @@
+__title__ = 'keylogger'
+__description__ = ' A simple keylogger for Windows, Linux and Mac '
+__url__ = 'https://simple-keylogger.github.io'
+__version__ = '0.1'
+__author__ = 'write your name'
+__author_email__ = 'yourmail@gmail.com'
+__license__ = 'MIT'
