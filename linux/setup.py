@@ -25,6 +25,7 @@ setup(
     version=about['__version__'],
     description=about['A simple keylogger'],
     long_description=readme,
+    long_description_content_type="text/markdown",
     author=about['Giacomo Lawrance'],
     author_email=about['thenerdystudent@gmail.com'],
     url=about['simple-keylogger.github.io'],
