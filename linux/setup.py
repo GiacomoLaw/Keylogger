@@ -17,20 +17,17 @@ about = {}
 with open(os.path.join(here, 'keylogger', '__version__.py'), 'r', 'utf-8') as f:
     exec(f.read(), about)
 
-with open('README.md', 'r', 'utf-8') as f:
-    readme = f.read()
-
 setup(
     name=about['__title__'],
     version=about['__version__'],
-    description=about['A simple keylogger'],
-    long_description=readme,
+    description=about['__description__'],
+    long_description="\n\n".join([open("README.md").read(), open("CHANGES.md").read()]),
     long_description_content_type="text/markdown",
-    author=about['Giacomo Lawrance'],
-    author_email=about['thenerdystudent@gmail.com'],
-    url=about['simple-keylogger.github.io'],
+    author=about['__author__'],
+    author_email=about['__author_email__'],
+    url=about['__url__'],
     install_requires=requires,
-    license=about['MIT'],
+    license=about['__license__'],
     packages=find_packages(),
     zip_safe=False,
     entry_points = {
