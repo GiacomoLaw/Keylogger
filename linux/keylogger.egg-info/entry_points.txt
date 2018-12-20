@@ -1,0 +1,3 @@
+[console_scripts]
+keylogger = keylogger.keylogger:main
+

@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: keylogger
+Version: 2.7.2
+Summary:  A simple keylogger for Windows, Linux and Mac 
+Home-page: https://simple-keylogger.github.io
+Author: Giacomo Lawrance
+Author-email: thenerdystudent@gmail.com
+License: MIT
+Description: # Keylogger
+        
+        **Keylogger** is simple keylogger for Windows, Linux and Mac.
+        ## Installation
+        
+        The following instructions will install Keylogger with pip Python package manager.
+        
+        ### pip
+        
+        This installs the latest stable, released version.
+        
+        ```
+          $ pip install keylogger
+        ```
+        
+        ## How to run it
+        
+        By running `keylogger` command, it'll start to log your strokes:
+        ```
+        $ keylogger
+        
+        RECORD extension version 1.13
+        ```
+        
+        The Keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key (Thats the one under escape on a standard keyboard). 
+        
+        Keylogger has several options that can be used to change output log file and change its cancel key:
+        
+        * `--log-file output.og`: File path to use as the log file.  Default is current directory.
+        * `--cancel-key`: The key that uses as the cancel key, default is '`'.
+        * `--clean-log`: clean the log file first, default is No.
+        
+        #### Use cases
+        
+        Some uses of a keylogger are:
+        
+        - Business Administration: Monitor what employees are doing.
+        - School/Institutions: Track keystrokes and log banned words in a file.
+        - Personal Control and File Backup: Make sure no one is using your computer when you are away.
+        - Parental Control: Track what your children are doing.
+        - Self analysis
+        
+        ---
+        
+        
+        
+        ## 2.7.3 (2018-12-20)
+        
+        - Fixed typo
+        
+        ## 2.7.2 (2018-12-05)
+        
+        - Add CHANGES file and update `setup.py` file - Thanks **@GreatBahram**
+        
+        ## 2.7.1 (2018-12-04)
+        
+        - Add python package structure - Thanks **@GreatBahram**
+        - Add CLI for `keylogger` - Thanks **@GreatBahram**
+        - Update Readme file- Thanks **@GreatBahram**
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
