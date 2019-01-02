@@ -1,0 +1,6 @@
+before_script: cd linux
+language: python
+python:
+    - "3.6"
+  script:
+    - setup
