@@ -3,9 +3,17 @@
 
 [Website](https://simple-keylogger.github.io) - [Keylogger wiki](https://github.com/GiacomoLaw/Keylogger/wiki)
 
+Help support the project:
+
+<a href="https://www.buymeacoffee.com/giacomo" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+We use BrowserStack to test across multiple browsers:
+
+[<img src="https://raw.githubusercontent.com/GiacomoLaw/TNS-images/master/browserstack-logo-600x315.png">](https://www.browserstack.com/)
+
 Welcome to the simple keylogger repo! A keylogger is a program that records your keystrokes, and this program saves them in a log file on your local computer.
 
-Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork and improve it if you want. Be sure to check out the [pull requests](https://github.com/GiacomoLaw/Keylogger/pulls) to see if your problem has been fixed, or to help out others.
+Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork and improve it if you want. Be sure to check out the [issues](https://github.com/GiacomoLaw/Keylogger/issues) or [pull requests](https://github.com/GiacomoLaw/Keylogger/pulls) to see if your problem has been fixed, or to help out others.
 
 Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
 
@@ -16,6 +24,8 @@ Currently, there are three keylogger programs for the major operating systems; W
 - [Mac installation guide](https://simple-keylogger.github.io/mac.html)
 - [Linux installation guide](https://simple-keylogger.github.io/linux.html)
 - [Check out the site for more information](https://simple-keylogger.github.io/)
+
+Or, view the `README.md` file in each programs folder for more up to date information.
 
 ## Windows
 To change visibility of the window set the `#define` in line 9 to `visible` or `invisible`.
@@ -114,8 +124,4 @@ Don't really understand licenses or tl;dr? Check out the [MIT license summary](h
 
 Distributed under the MIT license. See [LICENSE](https://github.com/GiacomoLaw/Keylogger/blob/master/LICENSE.txt) for more information.
 
-Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](https://giacomolaw.github.io)
-
-Help support the project:
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FWTUUC2C3G9BL&source=url)
+Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](https://giacomolaw.me)
