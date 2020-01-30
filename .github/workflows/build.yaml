@@ -1,0 +1,23 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build-cmake:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-latest]
+        include:
+        - os: macOS-latest
+          env:
+            CFLAGS: -Wdeclaration-after-statement -Werror
+            CXXFLAGS: -Werror
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build MacOS
+      env: ${{ matrix.env }}
+      run: |
+        cd mac
+        make
+        make install
