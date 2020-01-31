@@ -47,7 +47,7 @@ Download the repo. It will install in `/usr/local/bin/keylogger`.
 
 Install it:
 
-`$ git clone https://github.com/GiacomoLaw/Keylogger && cd keylogger/mac`
+`$ git clone https://github.com/GiacomoLaw/Keylogger && cd Keylogger/mac`
 
 `$ make && make install`
 
@@ -125,3 +125,4 @@ Don't really understand licenses or tl;dr? Check out the [MIT license summary](h
 Distributed under the MIT license. See [LICENSE](https://github.com/GiacomoLaw/Keylogger/blob/master/LICENSE.txt) for more information.
 
 Giacomo Lawrance – [@GiacomoLaw](https://twitter.com/GiacomoLaw) - [Website](https://giacomolaw.me)
+
