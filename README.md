@@ -18,7 +18,7 @@ Currently, there are three keylogger programs for the major operating systems; W
 ## Contents
 - [Windows installation guide](https://simple-keylogger.github.io/windows.html)
 - [Mac installation guide](https://simple-keylogger.github.io/mac.html)
-- [Linux installation guide](https://simple-keylogger.github.io/linux.html)
+- [Linux installation guide](https://github.com/GiacomoLaw/Keylogger/blob/master/linux/README.md)
 - [Check out the site for more information](https://simple-keylogger.github.io/)
 
 Or, view the `README.md` file in each programs folder for more up to date information.
