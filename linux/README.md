@@ -8,6 +8,10 @@ The following instructions will install Keylogger using pip3 .
 ```
   pip3 install -r requirements.txt
 ```
+or 
+```
+  pip3 install pyxhook
+```
 
 ## How to run it
 
