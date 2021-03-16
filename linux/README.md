@@ -27,7 +27,9 @@ $:~/Keylogger/linux$ fg
 
 The Keylogger is now running! It will log your strokes to a file .
 Stop it by typing the command `fg` then hitting `CTRL+C`
+
 or
+
 `kill {PID}` for example `kill 12529`
 
 Keylogger has several options that can be used to change output log file and change its cancel key:
