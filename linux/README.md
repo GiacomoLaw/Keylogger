@@ -17,16 +17,18 @@ or
 
 By running `nohup python3 keylogger.py &` command, it'll start to log your strokes:
 The meaning of nohup is ‘no hangup‘.
-When nohup command use with ‘&’ then it doesn’t return to shell command prompt after running the command in the background. But if you want you can return to shell command prompt by typing ‘fg’
+When nohup command use with ‘&’ then it doesn’t return to shell command prompt after running the command in the background. 
 ```
 $~/Keylogger/linux$ nohup python3 keylogger.py &
-[1] 12529
-$~/Keylogger/linux$ nohup: ignoring input and appending output to 'nohup.out'
+[1] 12529 //this is the keylogger's PID (process ID)
 $:~/Keylogger/linux$ fg
 
 ```
 
-The Keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key (Thats the one under escape on a standard keyboard). 
+The Keylogger is now running! It will log your strokes to a file .
+Stop it by typing the command `fg` then hitting `CTRL+C`
+or
+`kill {PID}` for example `kill 12529`
 
 Keylogger has several options that can be used to change output log file and change its cancel key:
 
