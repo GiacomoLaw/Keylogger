@@ -15,11 +15,15 @@ or
 
 ## How to run it
 
-By running `python3 keylogger.py` command, it'll start to log your strokes:
+By running `nohup python3 keylogger.py &` command, it'll start to log your strokes:
+The meaning of nohup is ‘no hangup‘.
+When nohup command use with ‘&’ then it doesn’t return to shell command prompt after running the command in the background. But if you want you can return to shell command prompt by typing ‘fg’
 ```
-$ python3 keylogger.py
+$~/Keylogger/linux$ nohup python3 keylogger.py &
+[1] 12529
+$~/Keylogger/linux$ nohup: ignoring input and appending output to 'nohup.out'
+$:~/Keylogger/linux$ fg
 
-started:
 ```
 
 The Keylogger is now running! It will log your strokes to the file you specified. Stop it by hitting the grave key (Thats the one under escape on a standard keyboard). 
