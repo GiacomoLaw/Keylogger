@@ -32,11 +32,6 @@ or
 
 `kill {PID}` for example `kill 12529`
 
-Keylogger has several options that can be used to change output log file and change its cancel key:
-
-* `python3 --log-file output.og ` # File path to use as the log file.  Default is current directory.
-* `python3 --cancel-key  `        # The key that uses as the cancel key, default is 'backtick( ` )' 
-* `python3 --clean-log  `         #clean the log file first, default is No.
 
 ---
 
