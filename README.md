@@ -33,7 +33,7 @@ Simply compile into an .exe, and then run. Visual Studio is good for this.
 
 Both of these save the keystrokes to a .txt file when closed.
 
-> Note that sometimes your compiler may through up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
+> Note that sometimes your compiler may throw up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
 
 ## Mac
 This is a little more complicated. Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
