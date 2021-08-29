@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # import needed modules
 import os
 from datetime import datetime
