@@ -16,9 +16,9 @@ Currently, there are three keylogger programs for the major operating systems; W
 > Looking to make a fix or change on the website? You can find the website repo [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
 
 ## Contents
-- [Windows installation guide](https://simple-keylogger.github.io/windows.html)
-- [Mac installation guide](https://simple-keylogger.github.io/mac.html)
-- [Linux installation guide](https://simple-keylogger.github.io/linux.html)
+- [Windows installation guide](https://github.com/GiacomoLaw/Keylogger/blob/master/windows/README.md)
+- [Mac installation guide](https://github.com/GiacomoLaw/Keylogger/blob/master/mac/README.md)
+- [Linux installation guide](https://github.com/GiacomoLaw/Keylogger/blob/master/linux/README.md)
 - [Check out the site for more information](https://simple-keylogger.github.io/)
 
 Or, view the `README.md` file in each programs folder for more up to date information.
@@ -71,33 +71,41 @@ Thanks to [Casey Scarborough](https://github.com/caseyscarborough/keylogger) for
 > Please note that this logger cannot record keystrokes in protected areas yet.
 
 ## Linux
+
 ### Installation
 
-First, install the keylogger:
 
-`pip install keylogger`
+The following instructions will install Keylogger using pip3 .
 
-and there are several options that can be set with environment variables:
-
-* `--log-file output.og`: File path to use as the log file.  Default is current directory.
-* `--cancel-key`: The key that uses as the cancel key, default is '`'.
-* `--clean-log`: clean the log file first, default is No.
-
-### How to run it?
-
-To run it just type `keylogger` and it'll run:
 ```
-keylogger --log-file keylogger.log 
-RECORD extension version 1.13
+  pip3 install -r requirements.txt
+```
+or 
+```
+  pip3 install pyxhook
 ```
 
-The keylogger is now running! It will log your strokes to the file you
-specified. Stop it by hitting the cancel key (grave or \`, if not set with
-`--cancel-key`. That's the one under escape on a standard keyboard.)
+## How to run it
 
-You can make it run on startup:
+By running `nohup python3 keylogger.py &` command, it'll start to log your strokes:
+The meaning of nohup is ‘no hangup‘.
+When nohup command use with ‘&’ then it doesn’t return to shell command prompt after running the command in the background. 
+```
+$~/Keylogger/linux$ nohup python3 keylogger.py &
+[1] 12529 //this is the keylogger's PID (process ID)
+$:~/Keylogger/linux$ fg
 
-`$ sudo make startup`
+```
+
+The Keylogger is now running! It will log your strokes to a file .
+Stop it by typing the command `fg` then hitting `CTRL+C`
+
+or
+
+`kill {PID}` for example `kill 12529`
+
+
+---
 
 ---
 #### Uses
