@@ -173,7 +173,6 @@ int Save(int key_stroke)
 		}
 		output << char(key);
 	}
-
 #endif
 	// instead of opening and closing file handlers every time, keep file open and flush.
 	output_file << output.str();
