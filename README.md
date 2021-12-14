@@ -11,7 +11,10 @@ Welcome to the simple keylogger repo! A keylogger is a program that records your
 
 Check out below to learn how to install them. These keyloggers are simple and bare bones, however they work great! Feel free to fork and improve it if you want. Be sure to check out the [issues](https://github.com/GiacomoLaw/Keylogger/issues) or [pull requests](https://github.com/GiacomoLaw/Keylogger/pulls) to see if your problem has been fixed, or to help out others.
 
-Currently, there are three keylogger programs for the major operating systems; Windows, Mac and Linux.
+Currently, there are three keylogger programs for the major operating systems. They are:-
+- Windows
+- Mac
+- Linux.
 
 > Looking to make a fix or change on the website? You can find the website repo [here](https://github.com/simple-keylogger/simple-keylogger.github.io).
 
