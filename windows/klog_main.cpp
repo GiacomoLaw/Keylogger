@@ -136,7 +136,7 @@ int Save(int key_stroke)
 			struct tm tm;
 			localtime_s(&tm, &t);
 			char s[64];
-			strftime(s, sizeof(s), "%c", &tm);
+			strftime(s, sizeof(s), "%FT%X%z", &tm);
 
 			output << "\n\n[Window: " << window_title << " - at " << s << "] ";
 		}
