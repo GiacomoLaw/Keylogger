@@ -1,5 +1,6 @@
 #define UNICODE
 #include <Windows.h>
+#include <cstring>
 #include <cstdio>
 #include <fstream>
 #include <iostream>
