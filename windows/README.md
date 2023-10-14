@@ -1,5 +1,5 @@
 ## Windows
-To change visibility of the window set the `#define` in line 9 to `visible` or `invisible`.
+To change visibility of the window set the `#define` in line 13 to `visible` or `invisible`.
 
 Simply compile into an .exe, and then run. Visual Studio is good for this.
 
