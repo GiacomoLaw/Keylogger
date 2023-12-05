@@ -33,7 +33,7 @@ Simply compile into an .exe, and then run. Visual Studio is good for this.
 
 Both of these save the keystrokes to a .txt file when closed.
 
-> Note that sometimes your compiler may through up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
+> Note that sometimes your compiler may throw up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
 
 ## Mac
 This is a little more complicated. Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
@@ -75,7 +75,7 @@ Thanks to [Casey Scarborough](https://github.com/caseyscarborough/keylogger) for
 ### Installation
 
 
-The following instructions will install Keylogger using pip3 .
+The following instructions will install Keylogger using pip3.
 
 ```
   pip3 install -r requirements.txt
@@ -97,7 +97,7 @@ $:~/Keylogger/linux$ fg
 
 ```
 
-The Keylogger is now running! It will log your strokes to a file .
+The Keylogger is now running! It will log your strokes to a file.
 Stop it by typing the command `fg` then hitting `CTRL+C`
 
 or
@@ -113,7 +113,7 @@ or
 Some uses of a keylogger are:
 
 - Personal Control and File Backup: Make sure no one is using your computer when you are away.
-- Self analysis
+- Self-analysis
 
 ---
 
