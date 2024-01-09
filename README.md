@@ -33,56 +33,17 @@ Simply compile into an .exe, and then run. Visual Studio is good for this.
 
 Both of these save the keystrokes to a .txt file when closed.
 
-> Note that sometimes your compiler may through up errors. If it does, keep compiling - the program still works. As always, please create an issue if you have a problem.
+> Note that sometimes your compiler may throw up errors. If it does, keep compiling - the program still works. Please check issues and discussions if you have a problem.
 
 ## Mac
-This is a little more complicated. Please note, it does not work for secure areas such as password inputs. I have not found a work around yet.
-
-### Installation
-Download the repo. It will install in `/usr/local/bin/keylogger`.
-
-Install it:
-
-`$ git clone https://github.com/GiacomoLaw/Keylogger && cd Keylogger/mac`
-
-`$ make && make install`
-
-It will log to `/var/log/keystroke.log`. This may require root access, but you can change that if you want. Set where you want it to log:
-
-`$ keylogger ~/logfile.txt`
-
-`Logging to: /var/log/keystroke.log`
-
-Want to make it start on system startup?
-
-`$ sudo make startup`
-
-That will run it on startup.
-
-### Uninstall
-`$ sudo make uninstall`
-
-Will uninstall the program, but not the logs.
-
----
-
-Thanks to [Casey Scarborough](https://github.com/caseyscarborough/keylogger) for the base program!
-
-> Please note that this logger cannot record keystrokes in protected areas yet.
+See [Casey Scarborough](https://github.com/caseyscarborough/keylogger).
 
 ## Linux
 
-### Installation
-
-
-The following instructions will install Keylogger using pip3 .
-
+### Usage
 ```
-  pip3 install -r requirements.txt
-```
-or 
-```
-  pip3 install pyxhook
+  pip install -r requirements. txt
+  keylogger.py
 ```
 
 ## How to run it
