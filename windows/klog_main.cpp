@@ -130,14 +130,13 @@ int Save(int key_stroke)
 
 		if (strcmp(window_title, lastwindow) != 0)
 		{
-			strcpy(lastwindow, window_title);
-            // get time
-            struct tm* tm_info;
-            time_t t = time(NULL);
-            tm_info = localtime(&t);
-            char s[64];
-            strftime(s, sizeof(s), "%FT%X%z", tm_info);
-
+		    strcpy_s(lastwindow, sizeof(lastwindow), window_title);
+		    // get time
+		    struct tm tm_info;
+		    time_t t = time(NULL);
+		    localtime_s(&tm_info, &t);
+		    char s[64];
+		    strftime(s, sizeof(s), "%FT%X%z", &tm_info);
 
 			output << "\n\n[Window: " << window_title << " - at " << s << "] ";
 		}
