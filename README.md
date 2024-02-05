@@ -35,6 +35,8 @@ Both of these save the keystrokes to a .txt file when closed.
 
 > Note that sometimes your compiler may throw up errors. If it does, keep compiling - the program still works. Please check issues and discussions if you have a problem.
 
+[@mydarkthawts](https://github.com/mydarkthawts) has an [excellent comment with a guide and a video on how to compile this here](https://github.com/GiacomoLaw/Keylogger/issues/80#issuecomment-1925503134).
+
 ## Mac
 See [Casey Scarborough](https://github.com/caseyscarborough/keylogger).
 
