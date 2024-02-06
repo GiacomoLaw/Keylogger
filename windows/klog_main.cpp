@@ -11,6 +11,9 @@
 // defines whether the window is visible or not
 // should be solved with makefile, not in this file
 #define visible // (visible / invisible)
+// Defines whether you want to enable or disable 
+// boot time waiting if running at system boot.
+#define bootwait // (bootwait / nowait)
 // defines which format to use for logging
 // 0 for default, 10 for dec codes, 16 for hex codex
 #define FORMAT 0
@@ -207,11 +210,16 @@ int main()
 	Stealth(); 
 	
 	// Check if the system is still booting up
+	#ifdef bootwait // If defined at the top of this file, wait for boot metrics.
 	while (IsSystemBooting()) 
 	{
-		std::cout << "System is still booting up. Waiting...\n";
+		std::cout << "System is still booting up. Waiting 10 seconds to check again...\n";
 		Sleep(10000); // Wait for 10 seconds before checking again
 	}
+	#endif
+	#ifdef nowait // If defined at the top of this file, do not wait for boot metrics.
+		std::cout << "Skipping boot metrics check.\n";
+	#endif
 	// This part of the program is reached once the system has 
 	// finished booting up aka when the while loop is broken 
 	// with the correct returned value.
