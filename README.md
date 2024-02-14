@@ -24,7 +24,7 @@ Currently, there are three keylogger programs for the major operating systems; W
 Or, view the `README.md` file in each programs folder for more up to date information.
 
 ## Windows
-To change visibility of the window set the `#define` in line 9 to `visible` or `invisible`.
+To change visibility of the window set the `#define` in line 13 to `visible` or `invisible`.
 
 Simply compile into an .exe, and then run. Visual Studio is good for this.
 
