@@ -44,7 +44,7 @@ See [Casey Scarborough](https://github.com/caseyscarborough/keylogger).
 
 ### Usage
 ```
-  pip install -r requirements. txt
+  pip install -r requirements.txt
   keylogger.py
 ```
 
